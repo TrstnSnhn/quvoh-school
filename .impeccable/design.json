@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T11:35:39.080Z",
+  "title": "Design System: The Quvoh",
+  "extensions": {
+    "colorMeta": {
+      "terracotta-orange": {
+        "role": "primary",
+        "displayName": "Terracotta Orange",
+        "canonical": "#B54724",
+        "tonalRamp": [
+          "hsl(14 67% 15%)",
+          "hsl(14 67% 26%)",
+          "hsl(14 67% 37%)",
+          "hsl(14 67% 48%)",
+          "hsl(14 67% 59%)",
+          "hsl(14 67% 70%)",
+          "hsl(14 67% 82%)",
+          "hsl(14 67% 95%)"
+        ]
+      },
+      "terracotta-pressed": {
+        "role": "primary",
+        "displayName": "Terracotta Pressed",
+        "canonical": "#963A1D",
+        "tonalRamp": [
+          "hsl(14 68% 15%)",
+          "hsl(14 68% 26%)",
+          "hsl(14 68% 37%)",
+          "hsl(14 68% 48%)",
+          "hsl(14 68% 59%)",
+          "hsl(14 68% 70%)",
+          "hsl(14 68% 82%)",
+          "hsl(14 68% 95%)"
+        ]
+      },
+      "foliage-green": {
+        "role": "secondary",
+        "displayName": "Foliage Green",
+        "canonical": "#3E5142",
+        "tonalRamp": [
+          "hsl(133 13% 15%)",
+          "hsl(133 13% 26%)",
+          "hsl(133 13% 37%)",
+          "hsl(133 13% 48%)",
+          "hsl(133 13% 59%)",
+          "hsl(133 13% 70%)",
+          "hsl(133 13% 82%)",
+          "hsl(133 13% 95%)"
+        ]
+      },
+      "wood-brown": {
+        "role": "tertiary",
+        "displayName": "Wood Brown",
+        "canonical": "#5A3E2B",
+        "tonalRamp": [
+          "hsl(24 35% 15%)",
+          "hsl(24 35% 26%)",
+          "hsl(24 35% 37%)",
+          "hsl(24 35% 48%)",
+          "hsl(24 35% 59%)",
+          "hsl(24 35% 70%)",
+          "hsl(24 35% 82%)",
+          "hsl(24 35% 95%)"
+        ]
+      },
+      "warm-cream": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "#FAF7F2",
+        "tonalRamp": [
+          "hsl(38 44% 15%)",
+          "hsl(38 44% 26%)",
+          "hsl(38 44% 37%)",
+          "hsl(38 44% 48%)",
+          "hsl(38 44% 59%)",
+          "hsl(38 44% 70%)",
+          "hsl(38 44% 82%)",
+          "hsl(38 44% 95%)"
+        ]
+      },
+      "bamboo-sand": {
+        "role": "neutral",
+        "displayName": "Bamboo Sand",
+        "canonical": "#E6D5B8",
+        "tonalRamp": [
+          "hsl(38 48% 15%)",
+          "hsl(38 48% 26%)",
+          "hsl(38 48% 37%)",
+          "hsl(38 48% 48%)",
+          "hsl(38 48% 59%)",
+          "hsl(38 48% 70%)",
+          "hsl(38 48% 82%)",
+          "hsl(38 48% 95%)"
+        ]
+      },
+      "sand-soft": {
+        "role": "neutral",
+        "displayName": "Sand Soft",
+        "canonical": "#F2EADB",
+        "tonalRamp": [
+          "hsl(39 47% 15%)",
+          "hsl(39 47% 26%)",
+          "hsl(39 47% 37%)",
+          "hsl(39 47% 48%)",
+          "hsl(39 47% 59%)",
+          "hsl(39 47% 70%)",
+          "hsl(39 47% 82%)",
+          "hsl(39 47% 95%)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#D8C7AB",
+        "tonalRamp": [
+          "hsl(37 37% 15%)",
+          "hsl(37 37% 26%)",
+          "hsl(37 37% 37%)",
+          "hsl(37 37% 48%)",
+          "hsl(37 37% 59%)",
+          "hsl(37 37% 70%)",
+          "hsl(37 37% 82%)",
+          "hsl(37 37% 95%)"
+        ]
+      },
+      "deep-charcoal": {
+        "role": "neutral",
+        "displayName": "Deep Charcoal",
+        "canonical": "#23251F",
+        "tonalRamp": [
+          "hsl(80 9% 15%)",
+          "hsl(80 9% 26%)",
+          "hsl(80 9% 37%)",
+          "hsl(80 9% 48%)",
+          "hsl(80 9% 59%)",
+          "hsl(80 9% 70%)",
+          "hsl(80 9% 82%)",
+          "hsl(80 9% 95%)"
+        ]
+      },
+      "muted-text": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "#5E594E",
+        "tonalRamp": [
+          "hsl(41 9% 15%)",
+          "hsl(41 9% 26%)",
+          "hsl(41 9% 37%)",
+          "hsl(41 9% 48%)",
+          "hsl(41 9% 59%)",
+          "hsl(41 9% 70%)",
+          "hsl(41 9% 82%)",
+          "hsl(41 9% 95%)"
+        ]
+      },
+      "error-brick": {
+        "role": "neutral",
+        "displayName": "Error Brick",
+        "canonical": "#A3301F",
+        "tonalRamp": [
+          "hsl(8 68% 15%)",
+          "hsl(8 68% 26%)",
+          "hsl(8 68% 37%)",
+          "hsl(8 68% 48%)",
+          "hsl(8 68% 59%)",
+          "hsl(8 68% 70%)",
+          "hsl(8 68% 82%)",
+          "hsl(8 68% 95%)"
+        ]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "hsl(0 0% 15%)",
+          "hsl(0 0% 26%)",
+          "hsl(0 0% 37%)",
+          "hsl(0 0% 48%)",
+          "hsl(0 0% 59%)",
+          "hsl(0 0% 70%)",
+          "hsl(0 0% 82%)",
+          "hsl(0 0% 95%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Rate names, form group label."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Rate amounts."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "Intros."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "General copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Captions and notes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "action-shadow",
+        "value": "0 6px 18px rgba(181,71,36,0.18)",
+        "purpose": "Primary button at rest; 0.28 on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-strong",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Overlays, section scroll, button press."
+      },
+      {
+        "name": "press",
+        "value": "transform 140ms, scale 0.97",
+        "purpose": "Buttons on press."
+      },
+      {
+        "name": "overlay-fade",
+        "value": "opacity and transform 280ms, scale 0.96 to 1",
+        "purpose": "Lightbox and mobile menu."
+      },
+      {
+        "name": "scroll-to-section",
+        "value": "450ms",
+        "purpose": "Anchor navigation; instant under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "390px"
+      },
+      {
+        "name": "tablet",
+        "value": "768px"
+      },
+      {
+        "name": "desktop",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Inquiry actions.",
+      "html": "<button class=\"ds-btn-primary\">Inquire on Messenger</button>",
+      "css": ".ds-btn-primary{background:#B54724;color:#FAF7F2;font:600 16px/24px Figtree,sans-serif;padding:14px 28px;height:52px;border:0;border-radius:999px;box-shadow:0 6px 18px rgba(181,71,36,.18);transition:box-shadow 200ms ease,transform 140ms cubic-bezier(.23,1,.32,1)}.ds-btn-primary:hover{box-shadow:0 6px 20px rgba(181,71,36,.28)}.ds-btn-primary:active{background:#963A1D;transform:scale(.97)}.ds-btn-primary:focus-visible{outline:3px solid #3E5142;outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Explore, Reset, directions.",
+      "html": "<button class=\"ds-btn-secondary\">Explore the Space</button>",
+      "css": ".ds-btn-secondary{background:transparent;color:#3E5142;font:600 16px/24px Figtree,sans-serif;padding:14px 28px;height:52px;border:1.5px solid #3E5142;border-radius:999px;transition:background 200ms ease,transform 140ms cubic-bezier(.23,1,.32,1)}.ds-btn-secondary:hover{background:rgba(62,81,66,.08)}.ds-btn-secondary:active{transform:scale(.97)}.ds-btn-secondary:focus-visible{outline:3px solid #3E5142;outline-offset:2px}"
+    },
+    {
+      "name": "Date Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labelled input with focus and error.",
+      "html": "<label class=\"ds-field\"><span>Preferred check-in date</span><input type=\"date\" class=\"ds-input\"></label>",
+      "css": ".ds-field{display:grid;gap:8px;font:500 15px/22px Figtree,sans-serif;color:#23251F}.ds-input{background:#FFFFFF;color:#23251F;border:1.5px solid #D8C7AB;border-radius:12px;padding:14px 16px;font:400 16px/24px Figtree,sans-serif}.ds-input:focus-visible{outline:none;border:2px solid #3E5142;box-shadow:0 0 0 4px rgba(62,81,66,.35)}.ds-input[aria-invalid=true]{border:2px solid #A3301F}"
+    },
+    {
+      "name": "Section Nav",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Anchor links over the hero photo.",
+      "html": "<nav class=\"ds-nav\"><a aria-current=\"true\">Home</a><a>About</a><a>Rates</a></nav>",
+      "css": ".ds-nav{display:flex;gap:4px;background:#23251F;padding:8px}.ds-nav a{font:500 15px/22px Figtree,sans-serif;color:#FAF7F2;padding:12px 12px 10px;border-radius:8px;text-decoration:none}.ds-nav a[aria-current]{font-weight:600;box-shadow:inset 0 -2px 0 #B54724}.ds-nav a:focus-visible{outline:3px solid #E6D5B8}"
+    },
+    {
+      "name": "Rate Card Away",
+      "kind": "card",
+      "refersTo": "rate-card-away",
+      "description": "Weekend rate; paired with the sand-soft Home colourway.",
+      "html": "<article class=\"ds-rate\"><h3>Weekend stay</h3><p class=\"ds-price\">₱3,000 <small>per stay</small></p><ul><li>22-hour stay</li><li>Includes up to 4 guests</li><li>Exclusive use of the property</li></ul></article>",
+      "css": ".ds-rate{background:#3E5142;color:#FAF7F2;border-radius:20px;padding:36px;font:400 16px/24px Figtree,sans-serif}.ds-rate h3{font:500 26px/32px 'Bricolage Grotesque',sans-serif;margin:0}.ds-price{font:600 56px/60px 'Bricolage Grotesque',sans-serif;margin:16px 0}.ds-price small{font:400 15px Figtree,sans-serif;color:#E6D5B8}"
+    },
+    {
+      "name": "Social Link",
+      "kind": "chip",
+      "refersTo": "social-link",
+      "description": "Opens an approved public profile.",
+      "html": "<a class=\"ds-social\">View Facebook page</a>",
+      "css": ".ds-social{display:inline-flex;align-items:center;height:52px;padding:0 24px 0 20px;background:#F2EADB;color:#23251F;border:1px solid #D8C7AB;border-radius:999px;font:500 15px/22px Figtree,sans-serif;text-decoration:none}.ds-social:focus-visible{outline:3px solid #3E5142}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lit Kubo at Dusk",
+    "overview": "The site opens on the courtyard after sunset, string bulbs on, pool lit, and then settles into a warm rustic reading room: Warm Cream pages, Bamboo Sand sections, and Foliage Green panels that echo the bamboo and leaves in the photographs. Terracotta Orange appears only where a guest should act.\n\nDensity is moderate: generous section rhythm, large real photographs at their true proportions, and short copy blocks. The type is a characterful grotesk for display with a humanist sans for reading, so the page feels friendly and local rather than resort-formal. Contrast comes from committed surfaces (green panels, a charcoal footer, dark photo scrims) so the palette never goes soft or all-beige.\n\nThe palette is pinned by the project owner. Rejected: a night-indigo palette; split heroes with pill chips; photos boxed small.",
+    "keyCharacteristics": [
+      "Warm Cream page ground with Bamboo Sand alternate sections and sand-soft cards.",
+      "Foliage Green carries panels, the weekend rate card, icons, secondary actions, and focus rings.",
+      "Terracotta Orange only for inquiry buttons, the active nav link, and the extra-guest fee.",
+      "Real photographs at true aspect ratios (1:1 and 3:4), 20 px corners, text over photos on Deep Charcoal scrims.",
+      "Deep Charcoal footer anchors the close; pill controls, 12 px white inputs."
+    ],
+    "rules": [
+      {
+        "name": "The Terracotta Means Act Rule",
+        "body": "Terracotta Orange marks what a guest should do or must not miss: inquiry buttons, the current section, the extra-guest fee. Never decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Soft Page Rule",
+        "body": "Every long scroll includes committed surfaces (a green panel, the charcoal footer, a photo scrim). A page of only cream and sand has failed.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Kicker Rule",
+        "body": "Headings stand alone. No small uppercase labels above headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surfaces Rule",
+        "body": "Cards and panels never cast shadows; they separate by colour.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep Terracotta Orange for inquiry actions, the current section, and the extra-guest fee.",
+      "Do use Foliage Green panels and the Deep Charcoal footer so the page keeps contrast.",
+      "Do place photographs at their true 1:1 or 3:4 proportions with 20 px corners and a caption naming the real subject.",
+      "Do keep the base rate, the 4-guest inclusion, the ₱250 extra-guest fee, and the 8-guest cap equally visible at every breakpoint.",
+      "Do put text over photos in Warm Cream on a Deep Charcoal scrim."
+    ],
+    "donts": [
+      "Don't introduce colours outside the six pinned colours and their listed tints.",
+      "Don't use terracotta text smaller than 26 px on sand-soft (4.5:1).",
+      "Don't put small uppercase kickers above headings.",
+      "Don't crop property photos into wide panoramas or overlay text pills on photos.",
+      "Don't show \"Message sent\" or \"Booking confirmed\"; an inquiry stays a draft until the guest sends it."
+    ]
+  }
+}

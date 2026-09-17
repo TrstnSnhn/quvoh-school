@@ -1,0 +1,9 @@
+node_modules/
+.vercel/
+.impeccable/review/
+.impeccable/questions/
+.impeccable/answer.txt
+icons.json
+scaffold.mjs
+.DS_Store
+Thumbs.db

@@ -1,0 +1,117 @@
+{
+  "title": "Choose the visual world for The Quvoh",
+  "question": "The roll assigned Barkada Trip Album. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Barkada Trip Album",
+      "kicker": "THE ROLL",
+      "lineage": "instant-film photo walls and group trip albums",
+      "thesis": "The site is the album your group makes after the stay, opened before you go.",
+      "palette": ["#F2EFE6", "#16302B", "#E8633A", "#F4C542"],
+      "materials": ["instant-film borders", "marker handwriting", "one strip of tape color"],
+      "viewport": "The courtyard photo as a large square instant print, slightly tilted, beside 'The whole place is yours.' with Inquire as a marker-circled action.",
+      "risk": "Tips into kid-craft if tilt, tape, and handwriting are sprinkled instead of ruled.",
+      "raised": [
+        {"from": "challenger-azulejo", "raise": "Every photo snaps to a real film format: square photos as instant square, portrait photos as instant mini, so no property photo is ever cropped."},
+        {"from": "challenger-riso", "raise": "Total ink commitment: paper, one deep green ink, one marker orange. No in-between tints."},
+        {"from": "challenger-kit", "raise": "Weekday and weekend rates are the same card in home and away colorways, so neither outweighs the other."},
+        {"from": "challenger-sixpack", "raise": "Six stay facts each own one fixed frame (two rates, 4 included, +₱250, max 8, 2 p.m. to 12 noon) for a one-glance cross-check."},
+        {"from": "challenger-jp", "raise": "Amenities packed as one dense ruled packing list instead of nine airy rows."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Blue Hour Courtyard",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the property's own dusk: string bulbs against an indigo sky",
+      "thesis": "Sell the evening you get: the courtyard after sunset, lights on, whole place quiet.",
+      "palette": ["#101A2E", "#1F2F4F", "#FFC46B", "#EDE6D6"],
+      "materials": ["full-bleed dusk photography", "tungsten glow", "night-sky grounds"],
+      "viewport": "Full-bleed dusk pool photo, headline set in warm light over deep indigo, Inquire lit like a bulb.",
+      "risk": "Familiar dark-hospitality look; daylight interior photos fight the night palette."
+    },
+    {
+      "id": "challenger-riso",
+      "label": "Risograph Zine",
+      "verdict": "declined",
+      "lineage": "risograph spot-ink printing",
+      "thesis": "Two fluorescent inks misregistered over toothy paper.",
+      "palette": ["#F3EDE0", "#FF48B0", "#0078BF", "#FFE800"],
+      "materials": ["spot ink", "halftone grain"],
+      "viewport": "Duotone courtyard photo under a misregistered wordmark.",
+      "risk": "Duotone would misrepresent the real property colors.",
+      "case": "Loses clarity: spot inks recolor the real photos; loses audience: art-school register.",
+      "kept": "Total palette commitment, no in-between tints.",
+      "hero": "https://impeccable.style/worlds/cards/risograph-web-system-hero.webp"
+    },
+    {
+      "id": "challenger-kit",
+      "label": "Football Kit Wall",
+      "verdict": "declined",
+      "lineage": "home and away football kits",
+      "thesis": "Crest over the heart, colorways that swap.",
+      "palette": ["#0B3D2E", "#FFFFFF", "#D4AF37"],
+      "materials": ["polyester weave", "embroidered crest"],
+      "viewport": "Logo as crest, weekday and weekend as home and away shirts.",
+      "risk": "Sports costume on a rest-and-swim stay.",
+      "case": "Loses audience and clarity: guests do not read a getaway as a team kit.",
+      "kept": "Home and away colorway logic for the two equal rates.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-football-kit-crest-hero.webp"
+    },
+    {
+      "id": "challenger-azulejo",
+      "label": "Azulejo Hall",
+      "verdict": "declined",
+      "lineage": "tin-glazed tile station halls",
+      "thesis": "Cobalt narrative panels on a tile grid.",
+      "palette": ["#1B3F8B", "#F7F5EF", "#D9A93A"],
+      "materials": ["glazed tile", "grout seams"],
+      "viewport": "Courtyard scene painted across a tile panel.",
+      "risk": "Portuguese tile world has no home in Pampanga.",
+      "case": "Loses both: foreign place, and paintings replace real photos.",
+      "kept": "Everything snaps to whole units: here, real film formats.",
+      "hero": "https://impeccable.style/worlds/cards/architecture-places-azulejo-station-hall-hero.webp"
+    },
+    {
+      "id": "challenger-sixpack",
+      "label": "Night Instrument Panel",
+      "verdict": "declined",
+      "lineage": "aircraft six-pack gauges",
+      "thesis": "Six luminous dials, each owning one truth.",
+      "palette": ["#0A0C0B", "#E8F0E8", "#7CFF9B"],
+      "materials": ["matte panel", "luminous markings"],
+      "viewport": "Rates and limits as six gauges.",
+      "risk": "Cockpit coldness on a cozy stay.",
+      "case": "Loses both: no guest identifies, gauges obscure plain prices.",
+      "kept": "Six stay facts in six fixed frames, cross-checkable at a glance.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-night-flight-six-pack-hero.webp"
+    },
+    {
+      "id": "challenger-jp",
+      "label": "Japanese Dense Web",
+      "verdict": "declined",
+      "lineage": "Japanese high-density portals",
+      "thesis": "Boxed modules packed edge to edge.",
+      "palette": ["#FFFFFF", "#111111", "#D7000F"],
+      "materials": ["hairline modules", "small red tabs"],
+      "viewport": "Dense module mosaic of facts and photos.",
+      "risk": "Crowds out the photos the owner needs seen.",
+      "case": "Loses both: density fights a slow getaway and a small fact set.",
+      "kept": "Pack the amenity list densely, no whitespace inflation.",
+      "hero": "https://impeccable.style/worlds/cards/japanese-high-density-web-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The boutique private-stay site, executed impeccably.",
+    "palette": ["#FFFFFF", "#1C1C1A", "#2F5D50"],
+    "materials": ["full-bleed photography", "clean grid"],
+    "viewport": "Full-width courtyard photo, name and tagline overlaid, Inquire button, facts row below.",
+    "risk": "Indistinguishable from every other private resort listing by design."
+  },
+  "steer": true
+}

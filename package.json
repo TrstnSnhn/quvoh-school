@@ -1,0 +1,8 @@
+{
+  "name": "quvoh",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/inquiry.test.mjs"
+  }
+}
