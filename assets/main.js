@@ -10,7 +10,7 @@ export function formatDate(iso) {
 
 // Google Apps Script web app URL that appends inquiries to the sheet (see google-apps-script/Code.gs).
 // Leave empty to skip saving.
-export const SHEET_ENDPOINT = "";
+export const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzCyeAoeaL1YB0Kav0PubuVW_dNnSERmk8DZjoIV957tr8GCgpO61gRrJKhQHwgxzD0/exec";
 export const MESSENGER_URL = "https://m.me/61566061342446";
 
 export function messengerLink(text) {
