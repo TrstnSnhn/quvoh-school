@@ -8,8 +8,19 @@ export function formatDate(iso) {
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 
-export function validateInquiry({ checkIn, checkOut, guests }, today) {
+// Google Apps Script web app URL that appends inquiries to the sheet (see google-apps-script/Code.gs).
+// Leave empty to skip saving.
+export const SHEET_ENDPOINT = "";
+export const MESSENGER_URL = "https://m.me/61566061342446";
+
+export function messengerLink(text) {
+  return `${MESSENGER_URL}?text=${encodeURIComponent(text)}`;
+}
+
+export function validateInquiry({ name, contact, checkIn, checkOut, guests }, today) {
   const errors = {};
+  if (!(name || "").trim()) errors.name = "Enter your name.";
+  if (!(contact || "").trim()) errors.contact = "Enter a phone number, email, or Facebook name.";
   if (!checkIn) errors.checkIn = "Choose a check-in date.";
   else if (today && checkIn < today) errors.checkIn = "Choose a check-in date from today onward.";
   if (!checkOut) errors.checkOut = "Choose a check-out date.";
@@ -19,9 +30,10 @@ export function validateInquiry({ checkIn, checkOut, guests }, today) {
   return errors;
 }
 
-export function buildMessage({ checkIn, checkOut, guests, message }) {
+export function buildMessage({ name, checkIn, checkOut, guests, message }) {
+  const who = (name || "").trim();
   const lines = [
-    "Hi! I would like to ask about a stay at The Quvoh.",
+    who ? `Hi! This is ${who}. I would like to ask about a stay at The Quvoh.` : "Hi! I would like to ask about a stay at The Quvoh.",
     `Preferred check-in: ${formatDate(checkIn)}, 2:00 p.m.`,
     `Preferred check-out: ${formatDate(checkOut)}, 12:00 noon`,
     `Number of guests: ${Number(guests)}`,
@@ -95,6 +107,53 @@ function initLightbox() {
   box.addEventListener("close", () => { if (opener) opener.focus({ preventScroll: true }); });
 }
 
+// Returns a status line for the guest. Saving never blocks the Messenger step.
+async function saveToSheet(payload) {
+  if (!SHEET_ENDPOINT) return "";
+  try {
+    // text/plain keeps this a simple request, so Apps Script needs no CORS preflight.
+    const res = await fetch(SHEET_ENDPOINT, { method: "POST", body: JSON.stringify(payload) });
+    const out = await res.json();
+    if (!out.ok) throw new Error(out.error || "save failed");
+    return "Your details were sent to the host.";
+  } catch {
+    return "We could not save your details, so please send the message below on Messenger.";
+  }
+}
+
+function initCarousel() {
+  const slides = [...document.querySelectorAll("[data-slides] img")];
+  const controls = document.querySelector("[data-slide-controls]");
+  if (slides.length < 2 || !controls) return;
+  const dots = [...controls.querySelectorAll(".dots button")];
+  const toggle = controls.querySelector("[data-slide-toggle]");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const INTERVAL_MS = 6000;
+  let index = 0;
+  let timer = null;
+  let paused = reduced;
+
+  const show = (next) => {
+    index = (next + slides.length) % slides.length;
+    slides.forEach((img, i) => img.classList.toggle("is-active", i === index));
+    dots.forEach((d, i) => (i === index ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current")));
+  };
+  const stop = () => { clearInterval(timer); timer = null; };
+  const start = () => { stop(); if (!paused && !document.hidden) timer = setInterval(() => show(index + 1), INTERVAL_MS); };
+  const setPaused = (value) => {
+    paused = value;
+    toggle.textContent = paused ? "Play" : "Pause";
+    toggle.setAttribute("aria-pressed", String(paused));
+    start();
+  };
+
+  dots.forEach((d, i) => d.addEventListener("click", () => { show(i); start(); }));
+  toggle.addEventListener("click", () => setPaused(!paused));
+  document.addEventListener("visibilitychange", start);
+  controls.hidden = false;
+  setPaused(paused);
+}
+
 function initInquiry() {
   const form = document.getElementById("inquiry");
   if (!form) return;
@@ -102,7 +161,10 @@ function initInquiry() {
   const draft = document.querySelector("[data-draft]");
   const status = document.querySelector("[data-copy-status]");
   const summary = form.querySelector("[data-error-summary]");
-  const fields = { checkIn: form.checkIn, checkOut: form.checkOut, guests: form.guests };
+  const saveStatus = document.querySelector("[data-save-status]");
+  const messenger = document.querySelector("[data-messenger]");
+  const submitBtn = form.querySelector("[data-submit]");
+  const fields = { name: form.elements.name, contact: form.contact, checkIn: form.checkIn, checkOut: form.checkOut, guests: form.guests };
   const today = localToday();
   form.checkIn.min = today;
   form.checkIn.addEventListener("change", () => { form.checkOut.min = form.checkIn.value || today; });
@@ -121,13 +183,21 @@ function initInquiry() {
     summary.textContent = count ? `Check ${count} ${count === 1 ? "field" : "fields"} before preparing your message.` : "";
   };
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const data = { checkIn: form.checkIn.value, checkOut: form.checkOut.value, guests: form.guests.value, message: form.message.value };
+    if (submitBtn.getAttribute("aria-busy") === "true") return;
+    const data = {
+      name: fields.name.value, contact: form.contact.value,
+      checkIn: form.checkIn.value, checkOut: form.checkOut.value, guests: form.guests.value, message: form.message.value,
+    };
     const errors = validateInquiry(data, today);
     showErrors(errors);
     if (Object.keys(errors).length) { summary.focus(); return; }
+    submitBtn.setAttribute("aria-busy", "true");
+    saveStatus.textContent = await saveToSheet({ ...data, website: form.website.value });
+    submitBtn.removeAttribute("aria-busy");
     draft.value = buildMessage(data);
+    messenger.href = messengerLink(draft.value);
     status.textContent = "";
     form.hidden = true;
     ready.hidden = false;
@@ -145,7 +215,7 @@ function initInquiry() {
   document.querySelector("[data-copy]").addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(draft.value);
-      status.textContent = "Message copied. Paste it into Messenger or Instagram.";
+      status.textContent = "Message copied. Paste it into Messenger if it is not filled in.";
     } catch {
       draft.focus();
       draft.select();
@@ -158,6 +228,7 @@ if (typeof document !== "undefined") {
   initMenu();
   initActiveNav();
   initStickyHeader();
+  initCarousel();
   initLightbox();
   initInquiry();
 }
