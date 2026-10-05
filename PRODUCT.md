@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Figma Design mockup (file hJJzwGwS8m6NyrJETRjLMX), authored through the Figma MCP. No coded site in scope; a future build is out of scope.
+Live single-page site: plain HTML, CSS, and one ES module, no build step. Hosted on GitHub Pages (https://trstnsnhn.github.io/quvoh-school/) and Vercel. The inquiry form saves to a Google Sheet through a Google Apps Script web app (google-apps-script/). The original Figma mockup (file hJJzwGwS8m6NyrJETRjLMX) is the design reference.
 
 ## Users
 
@@ -44,9 +44,9 @@ Confirmed facts:
 - Public location: Arayat, Pampanga.
 
 Undecided / pending (never present as fact):
-- Exact address spelling (Telepayong vs Telapayong) and map pin.
+- Exact address spelling (Google Maps listing says Telepayong, purok 8; entrance sign says Telapayong, purok 6). The site shows only "Arayat, Pampanga"; map buttons use the Google Maps pin 15.1871892, 120.6590166.
 - PHP 500 tent arrangement (omit publicly).
-- Direct Messenger / Instagram DM deep links.
+- Instagram DM deep link (Messenger uses https://m.me/61566061342446 with prefilled text).
 - Video narration, captions, music clearance. Video 4 shows "2,499 only!", which conflicts with the PHP 2,500 weekday rate.
 - Public phone number (none supplied).
 
@@ -67,7 +67,7 @@ Source folder `C:\Users\trist\Downloads\Quvoh` (originals, do not modify):
 - Logo.jpg.
 - 4 vertical videos (9.8 to 22.8 s, with audio tracks, no captions). Only the 9.8 s exterior pan has no burned-in promotional text.
 
-Absent and not to be fabricated: reviews, guest photos, a mountain photograph, a map, a phone number, an email address.
+Absent and not to be fabricated: reviews, guest photos, a mountain photograph, an embedded map, a phone number, an email address.
 
 ## Product Principles
 

@@ -121,20 +121,31 @@ async function saveToSheet(payload) {
   }
 }
 
-// Background slideshow: crossfades on its own; stops while the tab is hidden or the visitor prefers reduced motion.
+// Background slideshow: crossfades on its own. A small corner button pauses it (WCAG 2.2.2);
+// it also stops while the tab is hidden and never starts for reduced-motion visitors.
 function initCarousel() {
   const slides = [...document.querySelectorAll("[data-slides] img")];
-  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const toggle = document.querySelector("[data-slide-toggle]");
+  if (slides.length < 2 || !toggle || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const INTERVAL_MS = 6000;
+  const icon = toggle.querySelector("use");
   let index = 0;
   let timer = null;
+  let paused = false;
   const next = () => {
     slides[index].classList.remove("is-active");
     index = (index + 1) % slides.length;
     slides[index].classList.add("is-active");
   };
-  const start = () => { clearInterval(timer); timer = document.hidden ? null : setInterval(next, INTERVAL_MS); };
+  const start = () => { clearInterval(timer); timer = paused || document.hidden ? null : setInterval(next, INTERVAL_MS); };
+  toggle.addEventListener("click", () => {
+    paused = !paused;
+    toggle.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+    icon.setAttribute("href", paused ? "#i-play" : "#i-pause");
+    start();
+  });
   document.addEventListener("visibilitychange", start);
+  toggle.hidden = false;
   start();
 }
 

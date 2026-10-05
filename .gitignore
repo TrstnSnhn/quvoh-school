@@ -8,3 +8,5 @@ scaffold.mjs
 .DS_Store
 Thumbs.db
 .playwright-mcp/
+.vscode/
+revision img.png
