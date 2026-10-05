@@ -64,6 +64,17 @@ function initActiveNav() {
   sections.forEach((s) => io.observe(s));
 }
 
+function initStickyHeader() {
+  const header = document.querySelector(".site-header");
+  const hero = document.getElementById("home");
+  if (!header || !hero || !("IntersectionObserver" in window)) return;
+  // Solid background once the hero has scrolled up under the header.
+  const io = new IntersectionObserver(([entry]) => {
+    header.classList.toggle("is-solid", !entry.isIntersecting);
+  }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` });
+  io.observe(hero);
+}
+
 function initLightbox() {
   const box = document.getElementById("lightbox");
   if (!box) return;
@@ -146,6 +157,7 @@ function initInquiry() {
 if (typeof document !== "undefined") {
   initMenu();
   initActiveNav();
+  initStickyHeader();
   initLightbox();
   initInquiry();
 }

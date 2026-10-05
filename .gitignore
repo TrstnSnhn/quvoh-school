@@ -7,3 +7,4 @@ icons.json
 scaffold.mjs
 .DS_Store
 Thumbs.db
+.playwright-mcp/
