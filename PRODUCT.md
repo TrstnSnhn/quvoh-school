@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Live single-page site: plain HTML, CSS, and one ES module, no build step. Hosted on GitHub Pages (https://trstnsnhn.github.io/quvoh-school/) and Vercel. The inquiry form saves to a Google Sheet through a Google Apps Script web app (google-apps-script/). The original Figma mockup (file hJJzwGwS8m6NyrJETRjLMX) is the design reference.
+Live single-page site: plain HTML, CSS, and one ES module, no build step. Hosted on GitHub Pages (https://trstnsnhn.github.io/quvoh-school/). The inquiry form saves to a Google Sheet through a Google Apps Script web app (google-apps-script/). The original Figma mockup (file hJJzwGwS8m6NyrJETRjLMX) is the design reference.
 
 ## Users
 
