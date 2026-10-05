@@ -121,37 +121,21 @@ async function saveToSheet(payload) {
   }
 }
 
+// Background slideshow: crossfades on its own; stops while the tab is hidden or the visitor prefers reduced motion.
 function initCarousel() {
   const slides = [...document.querySelectorAll("[data-slides] img")];
-  const controls = document.querySelector("[data-slide-controls]");
-  if (slides.length < 2 || !controls) return;
-  const dots = [...controls.querySelectorAll(".dots button")];
-  const toggle = controls.querySelector("[data-slide-toggle]");
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const INTERVAL_MS = 6000;
   let index = 0;
   let timer = null;
-  let paused = reduced;
-
-  const show = (next) => {
-    index = (next + slides.length) % slides.length;
-    slides.forEach((img, i) => img.classList.toggle("is-active", i === index));
-    dots.forEach((d, i) => (i === index ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current")));
+  const next = () => {
+    slides[index].classList.remove("is-active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("is-active");
   };
-  const stop = () => { clearInterval(timer); timer = null; };
-  const start = () => { stop(); if (!paused && !document.hidden) timer = setInterval(() => show(index + 1), INTERVAL_MS); };
-  const setPaused = (value) => {
-    paused = value;
-    toggle.textContent = paused ? "Play" : "Pause";
-    toggle.setAttribute("aria-pressed", String(paused));
-    start();
-  };
-
-  dots.forEach((d, i) => d.addEventListener("click", () => { show(i); start(); }));
-  toggle.addEventListener("click", () => setPaused(!paused));
+  const start = () => { clearInterval(timer); timer = document.hidden ? null : setInterval(next, INTERVAL_MS); };
   document.addEventListener("visibilitychange", start);
-  controls.hidden = false;
-  setPaused(paused);
+  start();
 }
 
 function initInquiry() {
